@@ -34,6 +34,14 @@ Element to obtain Bower package information
           type: Array,
           notify: true,
           readOnly: true
+        },
+
+        /**
+         * Path to Bower packages.
+         */
+        base: {
+          type: String,
+          value: '../'
         }
       },
 
@@ -44,7 +52,7 @@ Element to obtain Bower package information
       _handlePackages: function(packages) {
         this._setPackagesJson([]);
         for (var i = 0; i < packages.length; i++) {
-          this.$.packagesAjax.url = '../../' + packages[i] + '/bower.json';
+          this.$.packagesAjax.url = this.base + packages[i] + '/bower.json';
           this.$.packagesAjax.generateRequest();
         }
       },

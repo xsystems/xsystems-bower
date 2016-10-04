@@ -61,7 +61,8 @@
         <paper-material elevation="1">
           <div class="demo">
             <xsystems-bower packages="[[packages]]"
-                            packages-json="{{packagesJson}}">
+                            packages-json="{{packagesJson}}"
+                            base="../../">
             </xsystems-bower>
             <template is="dom-repeat" items="[[packagesJson]]" as="packageJson">
               <div class="package">
